@@ -1,0 +1,238 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+// Custom styles
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 1em;
+    background-color: #d40000;
+    color: #fff;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    position: relative;
+}
+
+.left-actions {
+    display: flex;
+    gap: 1em; /* Adds spacing between buttons */
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin: 0 auto; /* Centers the logo container in the top bar */
+}
+
+.logo-container img {
+    height: 50px;
+}
+
+.logo-container .separator {
+    border-left: 2px solid #fff;
+    height: 50px;
+}
+
+.logo-container .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    white-space: nowrap;
+    color: #fff;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    background-color: #ff5757;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+.dropdown-toggle:hover {
+    background-color: #ffcccc;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.8em 1.2em;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #ffcccc;
+    color: #d40000;
+}
+
+.btn-left {
+    background-color: #ff5757;
+    color: white;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-left:hover {
+    background-color: #ffcccc;
+}
+
+.btn-right {
+    background-color: #ff5757;
+    color: white;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.btn-right:hover {
+    background-color: #ffcccc;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 0.5em 0;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 1em 0;
+}
+
+.hero a {
+    display: inline-block;
+    margin-top: 1em;
+    padding: 0.75em 1.5em;
+    background-color: #fff;
+    color: #d40000;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid #d40000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero a:hover {
+    background-color: #ffcccc;
+    color: #fff;
+}
+
+.footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: #ff5757;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+//--------------------------------------------
+
+.profile-container {
+    text-align: center;
+    padding: 2rem;
+}
+
+.profile-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.profile-info {
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+.profile-edit-container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+}
+

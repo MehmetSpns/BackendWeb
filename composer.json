@@ -1,0 +1,9 @@
+{
+    "name": "larvel/chiro",
+    "description": "site",
+    "type": "project",
+    "require": {
+        "vendor/package": "*",
+        "symfony/yaml": "^7.2"
+    }
+}

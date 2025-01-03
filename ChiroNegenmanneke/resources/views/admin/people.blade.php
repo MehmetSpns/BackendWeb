@@ -4,18 +4,15 @@
 <div class="container">
     <h1>Beheer Gebruikers</h1>
 
-    <!-- Search Form -->
     <form method="GET" action="{{ route('admin.people') }}" class="mb-4">
         <input type="text" name="search" class="form-control" placeholder="Zoek gebruiker op naam..." value="{{ request('search') }}">
         <button type="submit" class="btn btn-primary mt-2">Zoeken</button>
     </form>
 
-    <!-- Display success or error messages -->
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-    <!-- Add New User Form -->
     <div class="mb-4">
         <h2>Nieuwe Gebruiker Toevoegen</h2>
         <form action="{{ route('admin.user.store') }}" method="POST">
@@ -40,7 +37,6 @@
         </form>
     </div>
 
-    <!-- Display Users Table -->
     <table class="table">
         <thead>
             <tr>
@@ -57,7 +53,6 @@
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->isAdmin ? 'Admin' : 'Normaal' }}</td>
                     <td>
-                        <!-- Promote/Demote User -->
                         <form action="{{ route('admin.user.updateRole', $user->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('PATCH')
@@ -66,7 +61,6 @@
                             </button>
                         </form>
 
-                        <!-- Delete User -->
                         <form action="{{ route('admin.user.delete', $user->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
@@ -78,7 +72,6 @@
         </tbody>
     </table>
 
-    <!-- Pagination -->
     {{ $users->links() }}
 </div>
 @endsection

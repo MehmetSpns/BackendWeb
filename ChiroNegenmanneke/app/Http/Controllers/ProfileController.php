@@ -14,7 +14,7 @@ class ProfileController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('view', 'search');
     }
 
     /**
@@ -54,6 +54,7 @@ class ProfileController extends Controller
     public function update(Request $request)
     {
         $request->validate([
+            'username' => 'string|max:255|unique:users,username,' . auth()->id(), // Validate the username
             'name' => 'nullable|string|max:255',
             'birthday' => 'nullable|date',
             'bio' => 'nullable|string|max:1000',
@@ -61,6 +62,9 @@ class ProfileController extends Controller
         ]);
 
         $user = Auth::user();
+        $user->username = $request->input('username');  // Assign username
+
+        // Other fields...
         $user->name = $request->input('name');
         $user->birthday = $request->input('birthday');
         $user->bio = $request->input('bio');
@@ -78,4 +82,25 @@ class ProfileController extends Controller
 
         return redirect()->route('profile.show', $user)->with('success', 'Profile updated successfully.');
     }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        $users = User::where('username', 'like', "%$query%")
+                    ->orWhere('name', 'like', "%$query%")
+                    ->get();
+
+        return view('profile.search', compact('users', 'query'));
+    }
+
+    public function view($id)
+    {
+        $user = User::select('username', 'profile_picture', 'bio', 'created_at')->findOrFail($id);
+
+        return view('profile.view', compact('user'));
+    }
+
+
+
 }

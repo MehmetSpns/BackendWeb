@@ -238,3 +238,258 @@ body {
     margin-top: 0.5rem;
 }
 
+// News Styles
+.news-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.card-body {
+    padding: 2rem;
+    text-align: left;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-bottom: 4px solid #f8f9fa;
+    margin-bottom: 1rem;
+}
+
+.text-muted {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-warning {
+    background-color: #ffbe0b;
+    border: none;
+    color: white;
+}
+
+.btn-warning:hover {
+    background-color: #ff9900;
+}
+
+.btn-danger {
+    background-color: #ff3838;
+    border: none;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #e40000;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.mt-4 {
+    margin-top: 2rem;
+}
+
+.card-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #333;
+}
+
+
+// --------------------------------------------
+
+//profile page
+.profile-container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profile-picture img {
+    border: 3px solid #ddd;
+}
+
+.profile-bio h4 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+
+// --------------------------------------------
+
+// users pages (search, profile, etc)
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+}
+
+.input-group input {
+    border: 1px solid #ccc;
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #d40000;
+    outline: none;
+    box-shadow: 0 0 8px rgba(212, 0, 0, 0.5);
+}
+
+.btn-danger {
+    background-color: #d40000;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+    height: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-danger:hover {
+    background-color: #ff5757;
+    transform: translateY(-2px);
+    box-shadow: none; 
+}
+
+.list-group-item {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f9f9f9;
+    transform: translateY(-3px);
+}
+
+.profile-picture-container {
+    margin-right: 20px;
+}
+
+.profile-picture-container img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border: 3px solid #ddd;
+}
+
+.list-group-item .font-weight-bold {
+    font-size: 1.2rem;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.list-group-item .font-weight-bold:hover {
+    color: #d40000;
+}
+
+.list-group-item p {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 0;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.text-muted {
+    font-size: 1.2rem;
+    color: #888;
+}
+
+.list-group-item {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .input-group input,
+    .btn-danger {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .list-group-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-picture-container {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}

@@ -14,31 +14,34 @@ class ContactController extends Controller
     }
 
     public function send(Request $request)
-    {
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email',
-            'subject' => 'required|string|max:255',
-            'message' => 'required|string',
-        ]);
+{
+    $validated = $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email',
+        'subject' => 'required|string|max:255',
+        'message' => 'required|string',
+    ]);
 
-        Contact::create([
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-            'subject' => $validated['subject'],
-            'message' => $validated['message'],
-        ]);
+    Contact::create([
+        'name' => $validated['name'],
+        'email' => $validated['email'],
+        'subject' => $validated['subject'],
+        'message' => $validated['message'],
+    ]);
 
-        $emailContent = "Naam: " . $validated['name'] . "\n" .
-                        "Email: " . $validated['email'] . "\n" .
-                        "Onderwerp: " . $validated['subject'] . "\n" .
-                        "Bericht:\n" . $validated['message'];
+    $contactEmail = \App\Models\Setting::where('key', 'contact_email')->value('value');
 
-        Mail::raw($emailContent, function ($message) use ($validated) {
-            $message->to('mehmet.schepens@student.ehb.be')  // Vervang met het admin e-mailadres
-                    ->subject('Contactformulier: ' . $validated['subject']);
-        });
+    $emailContent = "Naam: " . $validated['name'] . "\n" .
+                    "Email: " . $validated['email'] . "\n" .
+                    "Onderwerp: " . $validated['subject'] . "\n" .
+                    "Bericht:\n" . $validated['message'];
 
-        return redirect()->route('contact.show')->with('success', 'Uw bericht is verzonden!');
-    }
+    Mail::raw($emailContent, function ($message) use ($validated, $contactEmail) {
+        $message->to($contactEmail)
+                ->subject('Contactformulier: ' . $validated['subject']);
+    });
+
+    return redirect()->route('contact.show')->with('success', 'Uw bericht is verzonden!');
+}
+
 }

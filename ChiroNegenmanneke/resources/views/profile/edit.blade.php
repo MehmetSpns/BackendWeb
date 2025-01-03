@@ -3,13 +3,28 @@
 @section('content')
 <div class="profile-edit-container">
     <h1>Update Profile</h1>
+    @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
     <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <!-- Name Field -->
         <div class="form-group">
-            <label for="name">Username</label>
+            <label for="name">Name</label>
             <input type="text" id="name" name="name" value="{{ old('name', $user->name) }}" class="form-control" required>
+        </div>
+
+        <!-- Username Field -->
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" value="{{ old('username', $user->username) }}" class="form-control" required>
         </div>
 
         <!-- Birthday Field -->

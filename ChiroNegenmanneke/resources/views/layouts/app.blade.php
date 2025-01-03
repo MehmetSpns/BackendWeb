@@ -19,10 +19,12 @@
                     <button class="dropdown-toggle">Menu</button>
                     <div class="dropdown-menu">
                         <a href="{{ route('welcome') }}">Home</a>
-                        <a href="#about">About</a>
-                        <a href="#events">Events</a>
-                        <a href="{{ route('contact.show') }}">Contact</a>
+                        <a href="{{ route('news.index') }}">Events</a>
+                        <a href="{{ route('users.search') }}">Search Users</a>
                         <a href="{{ route('faq') }}">FAQ.</a>
+                        <a href="{{ route('contact.show') }}">Contact</a>
+
+
                        
                     </div>
                 </div>

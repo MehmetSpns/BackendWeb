@@ -65,14 +65,11 @@ class ProfileController extends Controller
         $user->birthday = $request->input('birthday');
         $user->bio = $request->input('bio');
 
-        // Handle the profile picture upload
         if ($request->hasFile('profile_picture')) {
-            // Delete the old profile picture if it exists
             if ($user->profile_picture) {
                 Storage::delete($user->profile_picture);
             }
 
-            // Store the new profile picture
             $path = $request->file('profile_picture')->store('profile_pictures', 'public');
             $user->profile_picture = $path;
         }

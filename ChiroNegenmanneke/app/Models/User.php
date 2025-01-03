@@ -20,11 +20,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'username',       // Toegevoegd
-        'birthday',       // Toegevoegd
-        'bio',            // Toegevoegd
-        'profile_picture',// Toegevoegd
-        'isAdmin',        // Toegevoegd
+        'username',      
+        'birthday',       
+        'bio',            
+        'profile_picture',
+        'isAdmin',        
     ];
 
     /**
@@ -34,7 +34,7 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-        'remember_token',  // Verwijder de extra komma
+        'remember_token',
     ];
 
     /**
@@ -47,7 +47,7 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
-            'birthday' => 'datetime',  // Birthday als datum casten
+            'birthday' => 'datetime',  
         ];
     }
 }

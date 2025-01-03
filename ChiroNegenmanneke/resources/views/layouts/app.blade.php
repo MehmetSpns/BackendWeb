@@ -14,7 +14,6 @@
 <body>
     <div id="app">
         <div class="top-bar">
-            <!-- Left Section: Menu and Profile -->
             <div class="left-actions">
                 <div class="dropdown">
                     <button class="dropdown-toggle">Menu</button>
@@ -22,8 +21,8 @@
                         <a href="{{ route('welcome') }}">Home</a>
                         <a href="#about">About</a>
                         <a href="#events">Events</a>
-                        <a href="contact">Contact</a>
-                        <a href="#faq">FAQ.</a>
+                        <a href="{{ route('contact.show') }}">Contact</a>
+                        <a href="{{ route('faq') }}">FAQ.</a>
                        
                     </div>
                 </div>
@@ -54,7 +53,6 @@
                 @endguest
             </div>
 
-            <!-- Center Section: Logo and Title -->
             <div class="logo-container">
                 <img src="{{ asset('images/WhiteLogo.png') }}" alt="Chiro Logo" style="height:50px">
                 <div class="logo" style="margin-top: 5px; font-size: 2rem; font-weight: bold;">
@@ -68,7 +66,6 @@
         </main>
     </div>
     <footer>
-        <!-- Footer content -->
     </footer>
 </body>
 </html>

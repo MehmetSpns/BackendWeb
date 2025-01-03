@@ -9,7 +9,6 @@ class Contact extends Model
 {
     use HasFactory;
 
-    // Velden die massaal toewijsbaar zijn
     protected $fillable = [
         'name',
         'email',

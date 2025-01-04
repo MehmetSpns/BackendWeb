@@ -44,6 +44,7 @@ Route::prefix('news')->group(function () {
     // Public routes
     Route::get('/', [App\Http\Controllers\NewsController::class, 'index'])->name('news.index');
     Route::get('/{news}', [App\Http\Controllers\NewsController::class, 'show'])->name('news.show');
+    Route::post('/news/{news}/comments', [App\Http\Controllers\CommentController::class, 'store'])->name('comments.store');
 
     // Admin routes (requires authentication)
     Route::middleware(['auth', \App\Http\Middleware\AdminMiddelware::class])->group(function () {

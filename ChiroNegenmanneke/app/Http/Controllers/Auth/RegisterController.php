@@ -16,7 +16,7 @@ class RegisterController extends Controller
     |--------------------------------------------------------------------------
     |
     | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
+    | validation and creation. By default, this controller uses a trait to
     | provide this functionality without requiring any additional code.
     |
     */
@@ -67,6 +67,28 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'username' => $this->generateUniqueUsername($data['name']),
         ]);
+    }
+
+    /**
+     * Generate a unique username based on the user's name or random string.
+     *
+     * @param  string  $name
+     * @return string
+     */
+    private function generateUniqueUsername(string $name): string
+    {
+        // Remove non-alphanumeric characters and lowercase the name
+        $baseUsername = strtolower(preg_replace('/[^a-zA-Z0-9]/', '', $name));
+        $username = $baseUsername ?: 'user'; // Default to 'user' if name is empty or invalid
+        $suffix = '';
+
+        // Append a random number if the username is not unique
+        while (User::where('username', $username . $suffix)->exists()) {
+            $suffix = rand(1000, 9999); // Random 4-digit number
+        }
+
+        return $username . $suffix;
     }
 }

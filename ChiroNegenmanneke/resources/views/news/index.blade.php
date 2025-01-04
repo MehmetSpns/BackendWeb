@@ -17,7 +17,7 @@
                     <img src="{{ asset('storage/' . $newsItem->image) }}" class="card-img-top" alt="{{ $newsItem->title }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ $newsItem->title }}</h5>
-                        <p class="card-text">{{ Str::limit($newsItem->content, 100) }}</p>
+                        <p class="card-text">{{ strlen($newsItem->content) > 50 ? substr($newsItem->content, 0, 50) . '...' : $newsItem->content }}</p>
                         <a href="{{ route('news.show', $newsItem->id) }}" class="btn btn-primary">Read More</a>
                     </div>
                 </div>

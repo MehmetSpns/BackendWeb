@@ -37,7 +37,7 @@
                     <div class="dropdown">
                         <button class="dropdown-toggle">{{ Auth::user()->name }}</button>
                         <div class="dropdown-menu">
-                            <a href="profile">Profile</a>
+                            <a href="{{ route('profile.show') }}">Profile</a>
                             <a href="{{ route('logout') }}" 
                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 

@@ -41,7 +41,7 @@
                         <td>{{ $contact->name }}</td>
                         <td>{{ $contact->email }}</td>
                         <td>{{ $contact->subject }}</td>
-                        <td>{{ Str::limit($contact->message, 50) }}</td>
+                        <td>{{ Str::limit($contact->message, 250) }}</td>
                         <td>
                             <a href="{{ route('admin.inbox.show', $contact->id) }}" class="btn btn-sm btn-primary">Bekijken</a>
                             <form action="{{ route('admin.inbox.delete', $contact->id) }}" method="POST" style="display:inline;">

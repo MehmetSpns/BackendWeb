@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Models\User;
+use App\Models\Message;  
 
 class ProfileController extends Controller
 {
@@ -62,9 +63,8 @@ class ProfileController extends Controller
         ]);
 
         $user = Auth::user();
-        $user->username = $request->input('username');  // Assign username
+        $user->username = $request->input('username'); 
 
-        // Other fields...
         $user->name = $request->input('name');
         $user->birthday = $request->input('birthday');
         $user->bio = $request->input('bio');
@@ -95,11 +95,13 @@ class ProfileController extends Controller
     }
 
     public function view($id)
-    {
-        $user = User::select('username', 'profile_picture', 'bio', 'created_at')->findOrFail($id);
+{
+    $user = User::findOrFail($id);
+    $messages = Message::where('receiver_id', $id)->latest()->get();
 
-        return view('profile.view', compact('user'));
-    }
+    return view('profile.view', compact('user', 'messages'));
+}
+
 
 
 

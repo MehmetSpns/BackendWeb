@@ -55,7 +55,6 @@ Route::prefix('news')->group(function () {
     });
 });
 
-// Existing routes
 Route::get('/', [App\Http\Controllers\Controller::class, 'index'])->name('welcome');
 Route::get('/faq', [App\Http\Controllers\FaqController::class, 'index'])->name('faq');
 
@@ -65,7 +64,11 @@ Route::get('/profile/edit', [App\Http\Controllers\ProfileController::class, 'edi
 Route::post('/profile', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
 Route::get('/users/search', [App\Http\Controllers\ProfileController::class, 'search'])->name('users.search');
 Route::get('/users/{id}', [App\Http\Controllers\ProfileController::class, 'view'])->name('users.view');
+Route::post('/messages/{user}', [App\Http\Controllers\MessageController::class, 'store'])->name('messages.store');
+Route::get('/profile/{id}', [App\Http\Controllers\ProfileController::class, 'view'])->name('profile.view');
+
 
 // Contact page routes
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'show'])->name('contact.show');
 Route::post('/contact', [App\Http\Controllers\ContactController::class, 'send'])->name('contact.send');
+

@@ -26,8 +26,6 @@ body {
     padding: 1em 1em;
     background-color: #d40000;
     color: #fff;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
     position: relative;
 }
 
@@ -716,3 +714,137 @@ footer {
         }
     }
 }
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* White text for better contrast */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
+    z-index: 1;
+}
+
+.hero-content {
+    z-index: 2; /* Ensure text appears above the overlay */
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+/* About Section */
+.about-section {
+    background-color: #f5f5f5;
+    padding: 60px 20px;
+}
+
+.section-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Info Section */
+.info-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+}
+
+.info-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.info-item {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.info-cost {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333;
+}
+
+.btn-contact {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #d40000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.btn-contact:hover {
+    background-color: #ff5757;
+}
+
+/* History Section */
+.history-section {
+    padding: 60px 20px;
+    background-color: #f5f5f5;
+}
+
+.history-section .section-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+}
+
+.contact-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.contact-link {
+    color: #d40000;
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+

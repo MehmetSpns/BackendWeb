@@ -9,19 +9,6 @@
             {{ session('success') }}
         </div>
     @endif
-
-    <div class="mb-4">
-        <h3>Contact E-mailadres</h3>
-            @csrf
-            <div class="form-group">
-                <label for="contact_email">Huidig e-mailadres:</label>
-                <input type="email" id="contact_email" name="contact_email" class="form-control" 
-                       value="{{ $contactEmail }}" required>
-            </div>
-            <button type="submit" class="btn btn-success mt-2">Bijwerken</button>
-        </form>
-    </div>
-
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>

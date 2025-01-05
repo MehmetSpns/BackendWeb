@@ -6,11 +6,32 @@
     <title>Contact Message</title>
 </head>
 <body>
+    <x-alert />
+
     <h2>Nieuw contactformulier bericht</h2>
-    <p><strong>Naam:</strong> {{ $name }}</p>
-    <p><strong>Email:</strong> {{ $email }}</p>
-    <p><strong>Onderwerp:</strong> {{ $subject }}</p>
-    <p><strong>Bericht:</strong></p>
-    <p>{{ $message }}</p>
+    <form action="{{ route('contact.send') }}" method="POST">
+        @csrf
+        <div>
+            <label for="name">Naam:</label>
+            <input type="text" name="name" id="name" value="{{ old('name') }}" required>
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" value="{{ old('email') }}" required>
+        </div>
+
+        <div>
+            <label for="subject">Onderwerp:</label>
+            <input type="text" name="subject" id="subject" value="{{ old('subject') }}" required>
+        </div>
+
+        <div>
+            <label for="message">Bericht:</label>
+            <textarea name="message" id="message" required>{{ old('message') }}</textarea>
+        </div>
+
+        <button type="submit">Verstuur bericht</button>
+    </form>
 </body>
 </html>

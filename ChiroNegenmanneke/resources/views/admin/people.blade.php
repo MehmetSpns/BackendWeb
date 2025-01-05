@@ -2,18 +2,11 @@
 
 @section('content')
 <div class="container">
-    <h1>Beheer Gebruikers</h1>
-
-    <form method="GET" action="{{ route('admin.people') }}" class="mb-4">
-        <input type="text" name="search" class="form-control" placeholder="Zoek gebruiker op naam..." value="{{ request('search') }}">
-        <button type="submit" class="btn btn-primary mt-2">Zoeken</button>
-    </form>
-
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-    <div class="mb-4">
+    <div class="mb-5">
         <h2>Nieuwe Gebruiker Toevoegen</h2>
         <form action="{{ route('admin.user.store') }}" method="POST">
             @csrf
@@ -34,6 +27,18 @@
                 <input type="checkbox" name="isAdmin" id="isAdmin">
             </div>
             <button type="submit" class="btn btn-success">Voeg Gebruiker Toe</button>
+        </form>
+    </div>
+
+    <div class="mb-4">
+        <h1>Beheer Gebruikers</h1>
+        <form method="GET" action="{{ route('admin.people') }}" class="mb-4">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Zoek gebruiker op naam..." value="{{ request('search') }}">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary">Zoeken</button>
+                </div>
+            </div>
         </form>
     </div>
 
@@ -60,7 +65,6 @@
                                 {{ $user->isAdmin ? 'Demoteer naar normaal' : 'Maak admin' }}
                             </button>
                         </form>
-
                         <form action="{{ route('admin.user.delete', $user->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
@@ -72,6 +76,8 @@
         </tbody>
     </table>
 
-    {{ $users->links() }}
+    <div class="d-flex justify-content-center">
+        {{ $users->links() }}
+    </div>
 </div>
 @endsection

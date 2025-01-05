@@ -722,7 +722,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white; /* White text for better contrast */
+    color: white;
 }
 
 .hero-section::before {
@@ -732,12 +732,12 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
 .hero-content {
-    z-index: 2; /* Ensure text appears above the overlay */
+    z-index: 2;
     text-align: center;
 }
 
@@ -847,4 +847,262 @@ footer {
 .contact-link:hover {
     text-decoration: underline;
 }
+
+//--------------------------------------------
+// forum
+
+/* General Forum Styles */
+.forum {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+}
+
+.forum-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.forum-header {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.forum-header a {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bolder;
+    
+}
+
+.btn-create-topic {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-create-topic:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Forum Topic List (Index) */
+.forum-topic-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.forum-topic-link {
+    display: block;
+    text-decoration: none; /* Remove default anchor styling */
+}
+
+.forum-topic-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.forum-topic-container:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.03);
+}
+
+.forum-topic-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.forum-topic-title:hover {
+    color: #0056b3;
+}
+
+.forum-topic-meta {
+    font-size: 14px;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* Topic Details (Show) */
+.forum-topic-details {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.forum-topic-content {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.forum-reply-form {
+    margin-top: 20px;
+}
+
+.forum-reply-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.forum-reply-form button {
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.forum-reply-form button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.forum-reply {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.forum-reply .forum-reply-meta {
+    font-size: 14px;
+    color: #888;
+}
+
+.forum-reply-content {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Create Topic (Create) */
+.forum-create-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.forum-create-form label {
+    font-size: 16px;
+    color: #333;
+}
+
+.forum-create-form input, .forum-create-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.forum-create-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.forum-create-form button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Back Button */
+.btn-back {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    color: #333;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.btn-back:hover {
+    background-color: #e2e6ea;
+    color: #007bff;
+    transform: scale(1.05);
+}
+
+/* General Button Styles */
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+
+/* Edit Button */
+.btn-edit-topic-action {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #f39c12;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-delete-topic-action {
+    padding: 4px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.forum-topic-actions a {
+    text-decoration: none;
+    color: white;
+}
+
 

@@ -21,14 +21,13 @@
                         <a href="{{ route('welcome') }}">Home</a>
                         <a href="{{ route('news.index') }}">Events</a>
                         <a href="{{ route('users.search') }}">Search Users</a>
+                        @auth
+                            <a href="{{ route('forum.index') }}">Forum</a>
+                        @endauth
                         <a href="{{ route('faq') }}">FAQ.</a>
-                        <a href="{{ route('contact.show') }}">Contact</a>
-
-
-                       
+                        <a href="{{ route('contact.show') }}">Contact</a>                                        
                     </div>
                 </div>
-
                 @guest
                     @if (Route::has('login'))
                         <a class="btn-left" href="{{ route('login') }}">Login</a>
@@ -40,21 +39,16 @@
                             <a href="{{ route('profile.show') }}">Profile</a>
                             <a href="{{ route('logout') }}" 
                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
-                            </form>
-
-                            
+                            </form>                            
                             @if (auth()->check() && auth()->user()->isAdmin)
                                 <a href="{{ route('admin.dashboard') }}">Admin</a>
-                            @endif
-                            
+                            @endif                            
                         </div>
                     </div>
                 @endguest
             </div>
-
             <div class="logo-container">
                 <img src="{{ asset('images/WhiteLogo.png') }}" alt="Chiro Logo" style="height:50px">
                 <div class="logo" style="margin-top: 5px; font-size: 2rem; font-weight: bold;">
@@ -62,7 +56,6 @@
                 </div>
             </div>
         </div>  
-
         <main>
             @yield('content')
         </main>

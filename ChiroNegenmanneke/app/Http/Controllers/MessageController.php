@@ -22,7 +22,7 @@ class MessageController extends Controller
             'content' => $request->content,
         ]);
 
-        return redirect()->route('profile.view', $userId)->with('success', 'Message posted!');
+        return redirect()->route('users.view', $userId)->with('success', 'Message posted!');
     }
 
     

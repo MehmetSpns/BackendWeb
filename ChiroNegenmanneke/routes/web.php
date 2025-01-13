@@ -42,7 +42,7 @@ Route::prefix('news')->group(function () {
     Route::post('{news}/comments', [App\Http\Controllers\CommentController::class, 'store'])->name('comments.store');
 
     Route::middleware(['auth', \App\Http\Middleware\AdminMiddelware::class])->group(function () {
-        Route::get('create', [App\Http\Controllers\NewsController::class, 'create'])->name('news.create');
+        Route::get('news/create', [App\Http\Controllers\NewsController::class, 'create'])->name('news.create');
         Route::post('/', [App\Http\Controllers\NewsController::class, 'store'])->name('news.store');
         Route::get('{news}/edit', [App\Http\Controllers\NewsController::class, 'edit'])->name('news.edit');
         Route::put('{news}', [App\Http\Controllers\NewsController::class, 'update'])->name('news.update');
